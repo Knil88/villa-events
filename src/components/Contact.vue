@@ -1,12 +1,22 @@
 <script setup>
 import Footer from './Footer.vue';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { onMounted } from 'vue';
 
+onMounted(() => {
+  AOS.init({
+    duration: 1000, // Personalizza la durata dell'animazione
+    easing: 'ease-in-out',
+   once:false
+  });
+});
 </script>
 
 <template>
     <section id="contact" class="py-14 lg:py-24 relative ">
         <h2
-        class="font-manrope font-bold text-4xl lg:text-5xl text-black mb-9 max-lg:text-center relative text-center">
+        class="font-manrope font-bold text-4xl lg:text-5xl text-black mb-9 max-lg:text-center relative text-center" data-aos="zoom-in">
             Our Contacts
         </h2>
         <div style="width: 90% ; margin: auto;">

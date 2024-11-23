@@ -1,16 +1,27 @@
 <script setup>
 import residence from "@/assets/images/residence.jpg"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  AOS.init({
+    duration: 1000, // Personalizza la durata dell'animazione
+    easing: 'ease-in-out',
+   once:false
+  });
+});
 </script>
 
 <template>
     <section id="about" class="py-14 lg:py-24 relative">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative ">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-9">
-                <div class="img-box">
+                <div class="img-box" data-aos="fade-right">
                     <img :src="residence" alt="Residence image"
                         class="max-lg:mx-auto object-cover">
                 </div>
-                <div class="lg:pl-[100px] flex items-center">
+                <div class="lg:pl-[100px] flex items-center" data-aos="fade-left">
                     <div class="data w-full">
                         <h2
                             class="font-manrope font-bold text-4xl lg:text-5xl text-black mb-9 max-lg:text-center relative">

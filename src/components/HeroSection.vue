@@ -1,5 +1,20 @@
 <script setup>
 import video from "@/assets/videos/video_hero.mp4"
+import { onMounted } from "vue";
+import Typed from "typed.js";
+
+onMounted(() => {
+  const options1 = {
+    strings: ["For A Wedding","For A Birthday","For your special moments"], // Frase da digitare
+    typeSpeed: 80, // Velocità di digitazione
+    backSpeed: 60, // Velocità di cancellazione
+    loop: true,    // Ripetizione
+    showCursor:false
+  };
+
+  new Typed("#typed-1", options1);
+
+});
 </script>
 
 <template>
@@ -12,8 +27,8 @@ import video from "@/assets/videos/video_hero.mp4"
             type="video/mp4" autoplay muted loop></video>
     </div>
     <div class="video-content space-y-2 z-10">
-        <h1 class="font-light text-6xl">Villa Events</h1>
-        <h3 class="font-light text-3xl">For your special moments</h3>
+        <h1  class="font-light text-6xl ">Villa Events</h1>
+        <h3 id="typed-1" class="font-light text-3xl"></h3>
     </div>
 </section>
 

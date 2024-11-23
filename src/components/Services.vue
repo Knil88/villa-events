@@ -1,5 +1,16 @@
 <script setup>
 import service from "@/assets/images/services.jpg"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  AOS.init({
+    duration: 1000, // Personalizza la durata dell'animazione
+    easing: 'ease-in-out',
+   once:false
+  });
+});
 </script>
 
 <template>
@@ -7,7 +18,7 @@ import service from "@/assets/images/services.jpg"
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative ">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-9">
                
-                <div class="lg:pl-[100px] flex items-center">
+                <div class="lg:pl-[100px] flex items-center" data-aos="fade-right">
                     <div class="data w-full">
                         <h2
                             class="font-manrope font-bold text-4xl lg:text-5xl text-black mb-9 max-lg:text-center relative">
@@ -22,7 +33,7 @@ import service from "@/assets/images/services.jpg"
                         </p>
                     </div>
                 </div>
-                <div class="img-box">
+                <div class="img-box" data-aos="fade-left">
                     <img :src="service" alt="Service image"
                         class="max-lg:mx-auto object-cover">
                 </div>
